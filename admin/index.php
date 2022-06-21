@@ -10,8 +10,25 @@
 <body>
     <div class="container">
         <center>
-            <h1>Welcome To Admin Dashboard</h1>
+            <h1>Admin Login</h1>
         </center>
+        <form action="" method="POST">
+            <table class="table">
+                <tr>
+                    <td>User Name</td>
+                    <td><input type="text" name="username" class="form-control"></td>
+                </tr>
+                <tr>
+                    <td>Password</td>
+                    <td><input type="password" name="password" class="form-control"></td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td><input type="submit" name="btn" class="form-control btn btn-danger"></td>
+                </tr>
+                
+            </table>
+        </form>
     </div>
 </body>
 </html>
