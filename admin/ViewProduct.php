@@ -1,3 +1,7 @@
+<?php 
+    include("connection.php");
+
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -24,15 +28,20 @@
         </tr>
         </thead>
         <tbody>
-            <tr>
-                <td>1</td>
-                <td>Pant</td>
-                <td>1233</td>
-                <td>best</td>
-                <td>Paant</td>
-                <td>Shirt</td>
-                <td><img src="productimages/person.jpg" width="80" height="80" alt=""></td>
-                
+        <?php 
+            $fetch = mysqli_query($con,"select * from producttb");
+            while($row = mysqli_fetch_array($fetch))
+            {
+                echo '   
+                <tr>
+                    <td>'.$row[0].'</td>
+                    <td>'.$row[1].'</td>
+                    <td>'.$row[2].'</td>
+                    <td>'.$row[3].'</td>
+                    <td>'.$row[4].'</td>
+                    <td>'.$row[5].'</td>
+                    <td><img src="productimages/'.$row[6].'" width="80" height="80" alt=""></td>
+                    
                 <td>
                     <a href="" class="btn btn-success">Edit</a>
                     <a href="" class="btn btn-info">Detail</a>
@@ -40,6 +49,11 @@
                     
             </td>
             </tr>
+            ';
+            }
+        ?>
+       
+       
             
 
         </tbody>
