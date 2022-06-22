@@ -1,4 +1,10 @@
+<?php 
+    include("connection.php");
+
+?>
+
 <!DOCTYPE html>
+
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -18,9 +24,14 @@
         </tr>
         </thead>
         <tbody>
-            <tr>
-                <td>1</td>
-                <td>Pant</td>
+        <?php 
+            $fetch = mysqli_query($con,"select * from brandtb");
+            while($row = mysqli_fetch_array($fetch))
+            {
+                echo '   
+                <tr>
+                    <td>'.$row[0].'</td>
+                    <td>'.$row[1].'</td>
                 <td>
                     <a href="" class="btn btn-success">Edit</a>
                     <a href="" class="btn btn-info">Detail</a>
@@ -28,27 +39,11 @@
                     
             </td>
             </tr>
-            <tr>
-                <td>1</td>
-                <td>Shirt</td>
-                <td>
-                    <a href="" class="btn btn-success">Edit</a>
-                    <a href="" class="btn btn-info">Detail</a>
-                    <a href="" class="btn btn-danger">Delete</a>
-                    
-            </td>
-            </tr>
+            ';
+            }
+        ?>
+       
             
-            <tr>
-                <td>1</td>
-                <td>Pant</td>
-                <td>
-                    <a href="" class="btn btn-success">Edit</a>
-                    <a href="" class="btn btn-info">Detail</a>
-                    <a href="" class="btn btn-danger">Delete</a>
-                    
-            </td>
-            </tr>
             
 
         </tbody>

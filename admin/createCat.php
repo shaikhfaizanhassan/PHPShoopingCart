@@ -1,3 +1,8 @@
+<?php 
+    include("connection.php");
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -16,7 +21,7 @@
             <table class="table">
                 <tr>
                     <td>Category Name</td>
-                    <td><input type="text" name="username" class="form-control"></td>
+                    <td><input type="text" name="txtcat" class="form-control"></td>
                 </tr>
                 <tr>
                     <td></td>
@@ -25,6 +30,25 @@
                 
             </table>
         </form>
+
+        <?php 
+            if(isset($_POST["btn"]))
+            {
+                $catname = $_POST["txtcat"];
+                $query =mysqli_query($con,"insert into categorytb (cname) values
+                ('$catname')");
+
+                if($query>0)
+                {
+                    echo "<h1>Catgeory Save</h1>";
+                }
+                else
+                {
+                    echo "<h1>Catgeory not Save</h1>";
+                }
+            }
+        
+        ?>
     </div>
 </body>
 </html>
