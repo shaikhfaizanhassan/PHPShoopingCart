@@ -29,7 +29,14 @@
         </thead>
         <tbody>
         <?php 
-            $fetch = mysqli_query($con,"select * from producttb");
+            $fetch = mysqli_query($con,'SELECT * FROM producttb
+            INNER JOIN categorytb
+            ON
+            producttb.pCatID = categorytb.cid
+            INNER JOIN brandtb
+            ON
+            producttb.PBrandID = brandtb.bid;
+            ');
             while($row = mysqli_fetch_array($fetch))
             {
                 echo '   
@@ -38,8 +45,8 @@
                     <td>'.$row[1].'</td>
                     <td>'.$row[2].'</td>
                     <td>'.$row[3].'</td>
-                    <td>'.$row[4].'</td>
-                    <td>'.$row[5].'</td>
+                    <td>'.$row[8].'</td>
+                    <td>'.$row[10].'</td>
                     <td><img src="productimages/'.$row[6].'" width="80" height="80" alt=""></td>
                     
                 <td>
