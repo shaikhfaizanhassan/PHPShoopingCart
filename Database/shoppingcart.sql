@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jun 24, 2022 at 09:08 AM
+-- Generation Time: Jun 27, 2022 at 08:30 AM
 -- Server version: 10.4.22-MariaDB
 -- PHP Version: 8.1.2
 
@@ -20,6 +20,74 @@ SET time_zone = "+00:00";
 --
 -- Database: `shoppingcart`
 --
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `admin`
+--
+
+CREATE TABLE `admin` (
+  `id` int(11) NOT NULL,
+  `Name` varchar(50) NOT NULL,
+  `email` varchar(50) NOT NULL,
+  `password` varchar(50) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `brandtb`
+--
+
+CREATE TABLE `brandtb` (
+  `bid` int(11) NOT NULL,
+  `bname` varchar(50) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `brandtb`
+--
+
+INSERT INTO `brandtb` (`bid`, `bname`) VALUES
+(1, 'Addidas'),
+(2, 'Nick'),
+(3, 'Bata'),
+(4, 'English Boot House'),
+(5, 'Outfitter'),
+(6, 'Polo'),
+(7, 'Livies'),
+(8, 'Denim'),
+(9, 'Rolex'),
+(10, 'Rado'),
+(11, 'Zara'),
+(12, 'A Store'),
+(13, 'Winsilino');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `categorytb`
+--
+
+CREATE TABLE `categorytb` (
+  `cid` int(11) NOT NULL,
+  `cname` varchar(50) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `categorytb`
+--
+
+INSERT INTO `categorytb` (`cid`, `cname`) VALUES
+(1, 'Pant'),
+(2, 'Shirt'),
+(3, 'Shoes'),
+(4, 'Bags'),
+(5, 'Cap'),
+(6, 'Watch'),
+(7, 'Sun Glasses'),
+(8, 'T-shirt');
 
 -- --------------------------------------------------------
 
@@ -52,6 +120,24 @@ INSERT INTO `producttb` (`pid`, `pname`, `pprice`, `pdesc`, `pCatID`, `PBrandID`
 --
 
 --
+-- Indexes for table `admin`
+--
+ALTER TABLE `admin`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `brandtb`
+--
+ALTER TABLE `brandtb`
+  ADD PRIMARY KEY (`bid`);
+
+--
+-- Indexes for table `categorytb`
+--
+ALTER TABLE `categorytb`
+  ADD PRIMARY KEY (`cid`);
+
+--
 -- Indexes for table `producttb`
 --
 ALTER TABLE `producttb`
@@ -62,6 +148,24 @@ ALTER TABLE `producttb`
 --
 -- AUTO_INCREMENT for dumped tables
 --
+
+--
+-- AUTO_INCREMENT for table `admin`
+--
+ALTER TABLE `admin`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT for table `brandtb`
+--
+ALTER TABLE `brandtb`
+  MODIFY `bid` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
+
+--
+-- AUTO_INCREMENT for table `categorytb`
+--
+ALTER TABLE `categorytb`
+  MODIFY `cid` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 
 --
 -- AUTO_INCREMENT for table `producttb`
